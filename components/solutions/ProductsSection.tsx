@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
+import HomeTitle from "../home/HomeTitle";
 
 // Définition des produits avec couleur titre, couleur sur carte sélectionnée et URL
 const products = [
@@ -17,14 +18,14 @@ const products = [
     cardBg: "bg-gray-100",
     cardText: "text-gray-700",
     cardBtn: "text-gray-600",
-    titleColor: "text-red-600",
-    highlightBg: "bg-red-700",
+    titleColor: "text-[#e83d5f]",
+    highlightBg: "bg-[#e83d5f]",
     url: "https://lunionbooking.com",
   },
   {
     id: 2,
     name: "Lunion Educ",
-    description: "Améliorez la gestion de vos établissements",
+    description: "Révolutionnez votre gestion  la gestion immobilière",
     mainImage: "/assets/images/all-img/educ_building.jpg",
     dashboardImage: "/assets/images/all-img/educ_system.png",
     mockupImage: "/assets/images/produits/mockup_educ.png",
@@ -32,14 +33,14 @@ const products = [
     cardBg: "bg-gray-100",
     cardText: "text-gray-900",
     cardBtn: "text-gray-600",
-    titleColor: "text-orange-500",
-    highlightBg: "bg-orange-400",
+    titleColor: "text-[#d14b4c]",
+    highlightBg: "bg-[#d14b4c]",
     url: "https://lunioneduc.com",
   },
   {
     id: 3,
     name: "Lunion Secure",
-    description: "Sécurisez vos biens et informations sensibles",
+    description: "Révolutionnez la gestion des ressources humaines",
     mainImage: "/assets/images/all-img/secure_building.jpg",
     dashboardImage: "/assets/images/all-img/secu_system.png",
     mockupImage: "/assets/images/produits/mockup_secu.png",
@@ -47,8 +48,8 @@ const products = [
     cardBg: "bg-gray-100",
     cardText: "text-gray-900",
     cardBtn: "text-gray-600",
-    titleColor: "text-purple-600",
-    highlightBg: "bg-purple-400",
+    titleColor: "text-[#792dcb]",
+    highlightBg: "bg-[#792dcb]",
     url: "https://luniosecure.com",
   },
 ];
@@ -60,9 +61,11 @@ export default function ProductsSection() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Titre de section */}
-        <div className="flex items-center gap-3 mb-12">
-          <div className="bg-purple-600 p-2 rounded-xl"></div>
-          <h2 className="text-3xl font-bold text-purple-700">Nos produits</h2>
+        <div className="flex  flex justify-center items-center gap-3 mb-12">
+        
+          <h2 className="text-3xl font-bold text-purple-700">
+            <HomeTitle text="Nos produits" />
+          </h2>
         </div>
 
         {/* Cartes Produits */}
@@ -154,28 +157,28 @@ export default function ProductsSection() {
 
                     {/* Décors images en bas */}
                     <div className="absolute bottom-2 right-0 flex gap-2 sm:gap-4 items-end p-2 md:p-0">
-                      <div className="relative w-20 sm:w-24 h-20 sm:h-24 translate-y-4">
+                      <div className="relative lg:w-36 sm:w-24 lg:h-36 w-32 h-32 sm:h-24  translate-y-4">
                         <Image
                           src="/assets/images/all-img/doc_icone.png"
                           alt="Décor 1"
                           fill
-                          className="object-cover rounded-2xl"
+                          className="object-over rounded-2xl"
                         />
                       </div>
-                      <div className="relative w-20 sm:w-24 h-20 sm:h-24 translate-y-4">
+                      <div className="relative lg:w-36 sm:w-24 lg:h-36 w-32 h-32 sm:h-24 translate-y-4">
                         <Image
                           src="/assets/images/all-img/cube_icone.png"
                           alt="Décor 2"
                           fill
-                          className="object-cover rounded-2xl"
+                          className="object-cver rounded-2xl"
                         />
                       </div>
-                      <div className="relative w-20 sm:w-24 h-20 sm:h-24 translate-y-4">
+                      <div className="relative lg:w-36 sm:w-24 lg:h-36 w-32 h-32 sm:h-24  translate-y-4">
                         <Image
                           src="/assets/images/all-img/agenda_icone.png"
                           alt="Décor 3"
                           fill
-                          className="object-cover rounded-2xl"
+                          className="object-covr rounded-2xl"
                         />
                       </div>
                     </div>
