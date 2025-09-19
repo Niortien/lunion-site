@@ -1,6 +1,11 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
+import { ThemeProvider } from "@/components/ui/theme-provider";
+import Issa from "@/components/common/nav/Issa";
+import { ClientWrapper } from "@/components/common/ThemeProvider/ClientWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,15 +24,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Issa />
+          {/* Tout le contenu dynamique doit être Client Component */}
+          <ClientWrapper>{children}</ClientWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );
